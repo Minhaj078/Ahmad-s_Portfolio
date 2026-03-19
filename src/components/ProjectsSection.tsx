@@ -52,7 +52,7 @@ const projects = [
     live: 'https://web-production-c2b77.up.railway.app/',
   },
   {
-    title: 'Neon Nexus Portfolio',
+    title: 'Ahmad\'s Portfolio',
     category: 'RARE · FRONTEND',
     desc: 'This very portfolio — a cyberpunk hacker terminal experience built with React, Tailwind, and Framer Motion.',
     stats: [
@@ -60,8 +60,8 @@ const projects = [
       { icon: '🛡️', label: 'Style', value: 'Tailwind' },
       { icon: '⚙️', label: 'Anim', value: 'Framer' },
     ],
-    github: '#',
-    live: '#',
+    github: 'https://github.com/Minhaj078/Ahmad-s_Portfolio',
+    live: 'https://ahmadportfolio3.netlify.app/',
   },
 ];
 
