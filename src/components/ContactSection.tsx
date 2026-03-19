@@ -161,7 +161,7 @@ const ContactSection = () => {
         {/* Footer */}
         <div className="mt-24 pt-8 border-t border-primary/10 text-center">
           <p className="font-code text-xs text-muted-foreground">
-            {'>'} DESIGNED & BUILT BY <span className="text-primary">MINHAJUDDIN AHMAD</span> © 2025
+            {'>'} DESIGNED & BUILT BY <span className="text-primary">MINHAJUDDIN AHMAD</span> © 2026
           </p>
           <p className="font-code text-[10px] text-muted-foreground/50 mt-1">
             [ SYSTEM_UPTIME: ∞ | VERSION: 2.0.0 | STATUS: OPERATIONAL ]
