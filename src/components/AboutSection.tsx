@@ -1,13 +1,26 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Code, Server, Database, Brain } from 'lucide-react';
+import { Code, Server, Database, Brain, Shield, Terminal, Bot, Search } from 'lucide-react';
 
 const services = [
-  { icon: Code, title: 'FRONTEND_DEV', desc: 'React, Next.js, TypeScript — pixel-perfect UIs with blazing performance.' },
-  { icon: Server, title: 'BACKEND_ENG', desc: 'Node.js, Express, REST & GraphQL APIs — robust server architectures.' },
-  { icon: Database, title: 'DATABASE_MGR', desc: 'MongoDB, PostgreSQL, Redis — optimized data layers & caching.' },
-  { icon: Brain, title: 'ML_ENGINEER', desc: 'Python, TensorFlow, scikit-learn — intelligent data-driven solutions.' },
+  { icon: Code, title: 'FULLSTACK_DEV', desc: 'MERN stack (MongoDB, Express, React, Node.js) — building clean, responsive web apps end to end.' },
+  { icon: Server, title: 'BACKEND_ENG', desc: 'Django, FastAPI, Express — robust REST APIs, server architectures & scalable systems.' },
+  { icon: Database, title: 'DATABASE_OPS', desc: 'MongoDB, PostgreSQL, MySQL — designing efficient schemas, queries & data pipelines.' },
+  { icon: Bot, title: 'AI_EXPLORER', desc: 'LLM-powered apps, AI agents & intelligent backends — building the future of software.' },
+];
+
+const highlights = [
+  { icon: '🎯', text: 'Currently seeking opportunities as a Software Engineer / Backend Developer' },
+  { icon: '⚡', text: 'Skilled in MERN stack development (MongoDB, Express, React, Node.js)' },
+  { icon: '🔧', text: 'Backend development using Python frameworks like Django and FastAPI' },
+  { icon: '🔐', text: 'Experienced with authentication systems using JWT, bcrypt, and session-based security' },
+  { icon: '📊', text: 'Built Machine Learning projects using NumPy, Pandas, Matplotlib and scikit-learn' },
+  { icon: '🤖', text: 'Exploring LLM-based applications, AI agents, and intelligent backend systems' },
+  { icon: '🧠', text: 'Practicing Data Structures & Algorithms for problem-solving and coding interviews' },
+  { icon: '🐧', text: 'Comfortable working with Linux systems and development tools' },
+  { icon: '🚀', text: 'Quick learner, team-oriented, and always eager to explore deeper backend technologies' },
+  { icon: '🍕', text: 'Fun fact: Debugging with pizza is still my superpower' },
 ];
 
 const AboutSection = () => {
@@ -27,7 +40,7 @@ const AboutSection = () => {
           </h2>
 
           {/* Terminal card */}
-          <div className="border border-primary/20 mb-16 neon-border-glow" style={{ backgroundColor: '#0a0a0a' }}>
+          <div className="border border-primary/20 mb-12 neon-border-glow" style={{ backgroundColor: '#0a0a0a' }}>
             {/* Terminal header */}
             <div className="flex items-center gap-2 px-4 py-2 border-b border-primary/10">
               <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#FF006E' }} />
@@ -39,13 +52,43 @@ const AboutSection = () => {
               <p className="mb-3">
                 <span className="text-primary">minhaj@portfolio:~$</span> cat about.txt
               </p>
-              <p className="text-foreground leading-relaxed">
-                I'm Minhajuddin Ahmad, a Computer Science Engineering student at Lovely Professional University (Class of 2027). 
-                I'm a passionate Full Stack Developer who loves building end-to-end applications — from responsive frontends 
-                to scalable backend systems. I thrive on solving complex problems, learning new technologies, and shipping 
-                products that make a difference.
+              <p className="text-foreground leading-relaxed mb-4">
+                Hello! I'm Minhaj, a third-year Computer Science student at Lovely Professional University
+                (Class of 2027) and a passionate Full Stack & Backend Developer who enjoys building scalable
+                and efficient applications.
               </p>
-              <p className="mt-3 text-primary">minhaj@portfolio:~$ <span className="animate-pulse">▌</span></p>
+              <p className="text-foreground leading-relaxed mb-4">
+                I specialize in developing clean, responsive web applications using the MERN stack, while also
+                working extensively with backend frameworks like Django and FastAPI. I enjoy designing secure
+                authentication systems, building REST APIs, and working with databases.
+              </p>
+              <p className="text-foreground leading-relaxed">
+                Beyond web development, I actively explore Machine Learning and AI technologies. I have built
+                ML-based projects and am currently learning about LLM-powered applications and AI agents to
+                integrate intelligent features into modern software systems.
+              </p>
+              <p className="mt-4 text-primary">minhaj@portfolio:~$ <span className="animate-pulse">▌</span></p>
+            </div>
+          </div>
+
+          {/* Highlights list */}
+          <div className="border border-primary/15 mb-16 neon-border-glow" style={{ backgroundColor: '#0a0a0a' }}>
+            <div className="flex items-center gap-2 px-4 py-2 border-b border-primary/10">
+              <span className="font-code text-xs text-muted-foreground">minhaj@portfolio:~$ cat highlights.log</span>
+            </div>
+            <div className="p-6 space-y-3">
+              {highlights.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -15 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ delay: 0.3 + i * 0.06, duration: 0.3 }}
+                  className="flex items-start gap-3 font-code text-sm"
+                >
+                  <span className="text-base flex-shrink-0">{item.icon}</span>
+                  <span className="text-foreground/90">{item.text}</span>
+                </motion.div>
+              ))}
             </div>
           </div>
 

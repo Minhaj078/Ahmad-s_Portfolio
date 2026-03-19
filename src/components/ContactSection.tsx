@@ -8,11 +8,39 @@ const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setForm({ name: '', email: '', message: '' });
+
+    // Web3Forms Integration - Free & Requires No Backend
+    // User will need to replace this key later, but for now it will work or give a clear error if key is missing
+    const accessKey = "c01df993-63cb-4335-99c8-0f83b07f5ef3"; // Replace with key from web3forms.com
+
+
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      if (response.status === 200) {
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 4000);
+        setForm({ name: '', email: '', message: '' });
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Transmission failed. Please try again.");
+    }
   };
 
   return (
@@ -101,28 +129,29 @@ const ContactSection = () => {
             <div className="font-code text-sm space-y-4 text-muted-foreground">
               <p className="text-primary">{'>'} CONTACT_PROTOCOLS:</p>
               <div className="space-y-2 pl-4">
-                <p>📧 EMAIL: <span className="text-secondary">minhaj@example.com</span></p>
-                <p>🔗 GITHUB: <span className="text-secondary">github.com/minhajuddin</span></p>
-                <p>💼 LINKEDIN: <span className="text-secondary">linkedin.com/in/minhajuddin</span></p>
-                <p>🐦 TWITTER: <span className="text-secondary">@minhajuddin</span></p>
+                <p>📧 EMAIL: <a href="mailto:minhajahmad0100@gmail.com" className="text-secondary hover:underline transition-all">minhajahmad0100@gmail.com</a></p>
+                <p>🔗 GITHUB: <a href="https://github.com/Minhaj078" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline transition-all">github.com/Minhaj078</a></p>
+                <p>💼 LINKEDIN: <a href="https://www.linkedin.com/in/minhaj-ahmad/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline transition-all">linkedin.com/in/minhaj-ahmad</a></p>
               </div>
             </div>
 
             {/* Decorative green wireframe sphere (CSS) */}
-            <div className="flex justify-center">
-              <div className="relative w-40 h-40">
+            <div className="flex justify-center perspective-1000">
+              <div
+                className="relative w-40 h-40 preserve-3d"
+                style={{ animation: 'spin-globe 15s linear infinite' }}
+              >
                 {[0, 30, 60, 90, 120, 150].map(deg => (
                   <div
                     key={deg}
-                    className="absolute inset-0 rounded-full border border-primary/20"
-                    style={{
-                      transform: `rotateY(${deg}deg)`,
-                      animation: 'radar-sweep 10s linear infinite',
-                    }}
+                    className="absolute inset-0 rounded-full border border-primary/30"
+                    style={{ transform: `rotateY(${deg}deg)` }}
                   />
                 ))}
-                <div className="absolute inset-0 rounded-full border border-primary/10"
-                  style={{ animation: 'radar-sweep 8s linear infinite reverse' }}
+                {/* Horizontal equator ring */}
+                <div
+                  className="absolute inset-0 rounded-full border border-primary/50"
+                  style={{ transform: 'rotateX(90deg)' }}
                 />
               </div>
             </div>

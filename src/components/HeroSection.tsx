@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const roles = ['Full Stack Developer', 'Backend Engineer', 'Problem Solver', 'Code Architect'];
+const roles = ['Full Stack Developer', 'Backend Engineer', 'AI Explorer', 'Problem Solver'];
 
 const HeroSection = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -82,8 +82,8 @@ const HeroSection = () => {
           </div>
 
           <p className="text-soft-green font-body text-lg mb-8 max-w-md leading-relaxed">
-            Building robust, scalable applications from frontend to backend. 
-            Passionate about clean code, system design, and turning ideas into reality.
+            Building scalable apps with MERN, Django & FastAPI.
+            Exploring AI agents, LLMs, and intelligent backend systems.
           </p>
 
           {/* Terminal lines */}
@@ -145,11 +145,12 @@ const HeroSection = () => {
             <div className="absolute inset-4 hex-clip overflow-hidden flex items-center justify-center"
               style={{ backgroundColor: '#0a0a0a' }}
             >
-              <div className="text-center font-code text-xs text-primary/50 p-4">
-                <div className="text-3xl mb-2">👤</div>
-                <div>DROP PHOTO HERE</div>
-                <div className="text-primary/30 mt-1">Replace this in code with your image</div>
-              </div>
+              <img
+                src="/profile.png"
+                alt="Minhajuddin Ahmad"
+                className="w-full h-full object-cover"
+              />
+
               {/* Scanline overlay on photo */}
               <div className="absolute inset-0 pointer-events-none"
                 style={{
@@ -175,7 +176,7 @@ const HeroSection = () => {
               [ LPU · CSE · 2027 ]
             </div>
             <div className="absolute top-1/2 -left-32 -translate-y-1/2 font-code text-[10px] text-primary/70 label-pulse hidden lg:block">
-              [ FULL STACK DEV ]
+              [ AI EXPLORER ]
             </div>
 
             {/* Crosshair lines */}

@@ -4,45 +4,57 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    category: 'LEGENDARY · FULL STACK',
-    desc: 'A complete online shopping platform with real-time inventory, payment integration, and admin dashboard.',
+    title: 'SmartFoodStall',
+    category: 'LEGENDARY · FULL STACK + AI',
+    desc: 'A full-stack smart food ordering platform with AI integration. Features intelligent recommendations, real-time ordering, and a complete admin dashboard.',
+    stats: [
+      { icon: '⚡', label: 'Stack', value: 'Django + ML' },
+      { icon: '🛡️', label: 'Auth', value: 'Django Auth' },
+      { icon: '⚙️', label: 'DB', value: 'PostgreSQL' },
+    ],
+    github: 'https://github.com/Minhaj078/SmartFoodStall',
+    live: 'https://smartfoodstall.onrender.com/',
+  },
+  {
+    title: 'Talksie',
+    category: 'EPIC · REAL-TIME CHAT',
+    desc: 'A real-time chat application with instant messaging, user authentication, and seamless communication experience.',
     stats: [
       { icon: '⚡', label: 'Stack', value: 'MERN' },
-      { icon: '🛡️', label: 'Auth', value: 'JWT + bcrypt' },
+      { icon: '🛡️', label: 'Realtime', value: 'Socket.io' },
       { icon: '⚙️', label: 'DB', value: 'MongoDB' },
     ],
-    github: '#',
-    live: '#',
+    github: 'https://github.com/Minhaj078/Talksie',
+    live: 'https://talksie.onrender.com/',
   },
   {
-    title: 'AI Chat Assistant',
-    category: 'EPIC · ML / AI',
-    desc: 'Intelligent chatbot powered by custom NLP model with context-aware responses and conversation memory.',
+    title: 'AttendXpress',
+    category: 'RARE · FULL STACK',
+    desc: 'A comprehensive attendance management system handling makeup classes, proxy detection, and automated reporting.',
     stats: [
-      { icon: '⚡', label: 'Stack', value: 'Python + React' },
-      { icon: '🛡️', label: 'Model', value: 'Transformer' },
+      { icon: '⚡', label: 'Stack', value: 'Django + Python' },
+      { icon: '🛡️', label: 'Core', value: 'Django Templates' },
+      { icon: '⚙️', label: 'DB', value: 'SQLite' },
+    ],
+    github: 'https://github.com/Minhaj078/AttendXpress',
+    live: 'https://attendxpress-1.onrender.com/',
+  },
+  {
+    title: 'Django Note App',
+    category: 'RARE · BACKEND FOCUS',
+    desc: 'A robust note-taking application built with Django, featuring user authentication, CRUD operations, and clean UI.',
+    stats: [
+      { icon: '⚡', label: 'Stack', value: 'Django + Python' },
+      { icon: '🛡️', label: 'Auth', value: 'Django Auth' },
       { icon: '⚙️', label: 'DB', value: 'PostgreSQL' },
     ],
-    github: '#',
-    live: '#',
+    github: 'https://github.com/Minhaj078/Basic_Django_NoteApp',
+    live: 'https://web-production-c2b77.up.railway.app/',
   },
   {
-    title: 'Task Management API',
-    category: 'RARE · BACKEND',
-    desc: 'RESTful API with role-based access control, real-time notifications, and automated task scheduling.',
-    stats: [
-      { icon: '⚡', label: 'Stack', value: 'Node + Express' },
-      { icon: '🛡️', label: 'Auth', value: 'OAuth 2.0' },
-      { icon: '⚙️', label: 'DB', value: 'PostgreSQL' },
-    ],
-    github: '#',
-    live: '#',
-  },
-  {
-    title: 'Portfolio Terminal',
+    title: 'Neon Nexus Portfolio',
     category: 'RARE · FRONTEND',
-    desc: 'This very portfolio — a cyberpunk hacker terminal experience built with React and Framer Motion.',
+    desc: 'This very portfolio — a cyberpunk hacker terminal experience built with React, Tailwind, and Framer Motion.',
     stats: [
       { icon: '⚡', label: 'Stack', value: 'React + TS' },
       { icon: '🛡️', label: 'Style', value: 'Tailwind' },
@@ -98,6 +110,8 @@ const ProjectsSection = () => {
                 <div className="flex gap-3">
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 font-mono text-xs px-4 py-2 border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all"
                   >
                     <Github className="w-3 h-3" />
@@ -105,6 +119,8 @@ const ProjectsSection = () => {
                   </a>
                   <a
                     href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 font-mono text-xs px-4 py-2 border border-secondary/30 text-secondary hover:bg-secondary hover:text-secondary-foreground transition-all"
                   >
                     <ExternalLink className="w-3 h-3" />

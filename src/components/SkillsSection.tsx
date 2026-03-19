@@ -4,15 +4,17 @@ import { useRef } from 'react';
 const skillBars = [
   { name: 'FRONTEND', pct: 80 },
   { name: 'BACKEND', pct: 90 },
-  { name: 'DATABASES', pct: 82 },
-  { name: 'ML / AI', pct: 70 },
-  { name: 'DEVOPS', pct: 60 },
+  { name: 'DATABASES', pct: 85 },
+  { name: 'PYTHON', pct: 88 },
+  { name: 'ML / AI', pct: 65 },
+  { name: 'DSA', pct: 82 },
 ];
 
 const techIcons = [
-  'React', 'Node.js', 'TypeScript', 'Python', 'MongoDB',
-  'PostgreSQL', 'Docker', 'Git', 'Redis', 'TensorFlow',
-  'Next.js', 'Express', 'Tailwind', 'GraphQL', 'AWS',
+  'React', 'Node.js', 'Express', 'MongoDB',
+  'Django', 'FastAPI', 'Python', 'JavaScript',
+  'PostgreSQL', 'MySQL', 'Git', 'Linux',
+  'NumPy', 'Pandas', 'scikit-learn', 'JWT',
 ];
 
 const SkillsSection = () => {
@@ -107,7 +109,7 @@ const SkillsSection = () => {
               ))}
 
               {/* Tech grid */}
-              <div className="mt-8 grid grid-cols-3 gap-3">
+              <div className="mt-8 grid grid-cols-4 gap-3">
                 {techIcons.map((tech) => (
                   <div
                     key={tech}
