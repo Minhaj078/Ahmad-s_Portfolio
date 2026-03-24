@@ -31,6 +31,14 @@ const Navbar = () => {
               {link}
             </button>
           ))}
+          <a
+            href="/Minhajuddin_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs uppercase tracking-widest text-primary hover:text-primary-foreground transition-colors terminal-link neon-glow"
+          >
+            [ CV ]
+          </a>
           <div className="flex items-center gap-2 font-mono text-xs text-primary">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             [ ONLINE ]

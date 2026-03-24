@@ -106,6 +106,11 @@ const HeroSection = () => {
             >
               [ CONTACT_ME ]
             </button>
+            <a href="/Minhajuddin_CV.pdf" target="_blank" rel="noopener noreferrer">
+              <button className="font-mono text-sm px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all neon-border-glow">
+                [ VIEW_CV ]
+              </button>
+            </a>
           </div>
         </motion.div>
 
